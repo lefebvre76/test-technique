@@ -250,7 +250,20 @@
                             <constraint firstItem="kV4-2U-1R4" firstAttribute="top" secondItem="uP9-tf-R7g" secondAttribute="top" id="v4t-PH-n4W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JRe-fh-svn"/>
+                    <navigationItem key="navigationItem" id="JRe-fh-svn">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="z4f-E8-amz">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="backButtonHandle:" destination="SXc-AT-nus" id="u3q-Wf-z2Z"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="Tn8-TJ-WIE">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="shareButtonHandle:" destination="SXc-AT-nus" id="5Bl-Vm-al2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="j7v-Mu-RCL" id="Au4-xu-jYY"/>
                         <outlet property="imageView" destination="naQ-EZ-SHp" id="KNv-xh-WiP"/>
@@ -291,6 +304,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

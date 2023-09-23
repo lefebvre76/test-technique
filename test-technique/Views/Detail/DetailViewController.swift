@@ -49,6 +49,19 @@ class DetailViewController: UIViewController {
             self.showToast(message: "Impossible d'ouvrir l'URL")
         }
     }
+    
+    @IBAction func shareButtonHandle(_ sender: Any) {
+        if let path = self.episode?.url, let url = URL(string:path) {
+            let activity = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+            present(activity, animated: true)
+        } else {
+            self.showToast(message: "Impossible de partager l'URL")
+        }
+    }
+    
+    @IBAction func backButtonHandle(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension DetailViewController: UITableViewDelegate {
