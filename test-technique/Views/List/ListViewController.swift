@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
 
     @IBOutlet weak var loaderView: UIView!
     @IBOutlet weak var episodesTableView: UITableView!
     
     var episodes: [Episode] = []
+    var selectedEpisode: Episode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,22 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedEpisode = self.episodes[indexPath.row]
+        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.selectedEpisode = nil
+        self.episodesTableView.deselectRow(at: indexPath, animated: false)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? DetailViewController {
+            destinationVC.episode = self.selectedEpisode
+        }
+    }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.episodes.count
     }
