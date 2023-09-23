@@ -17,4 +17,5 @@ class Episode: Decodable, Identifiable {
     var airdate: String
     var airtime: String
     var summary: String
+    var image: EpisodeImage
 }

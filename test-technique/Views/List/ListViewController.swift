@@ -30,6 +30,13 @@ class ListViewController: UIViewController {
             }
             self.loaderView.isHidden = true
         }
+        self.episodesTableView.separatorColor = .clear
+        self.episodesTableView.register(UINib(nibName: "EpisodeTableViewCell",
+                                              bundle: nil),
+                                forCellReuseIdentifier: "EpisodeTableViewCell")
+        self.episodesTableView.register(UINib(nibName: "BigEpisodeTableViewCell",
+                                              bundle: nil),
+                                forCellReuseIdentifier: "BigEpisodeTableViewCell")
     }
 }
 
@@ -52,17 +59,25 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.episodes.count
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row%5 == 0 {
+            return 375
+        } else {
+            return 110
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
-        if let dequeueCell = tableView.dequeueReusableCell(withIdentifier: "cell") {
-            cell = dequeueCell
+        if indexPath.row%5 == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BigEpisodeTableViewCell", for: indexPath) as? BigEpisodeTableViewCell else { return UITableViewCell() }
+            cell.setEpisode(episode: self.episodes[indexPath.row])
+            return cell
         } else {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell else { return UITableViewCell() }
+            cell.setEpisode(episode: self.episodes[indexPath.row])
+            return cell
         }
-        let row = indexPath.row
-        cell.textLabel?.text = episodes[row].name
-        return cell
     }
 }
 
