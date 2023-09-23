@@ -51,6 +51,9 @@ extension ListViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? DetailViewController {
             destinationVC.episode = self.selectedEpisode
+            if let index = self.episodesTableView.indexPathForSelectedRow?.row {
+                destinationVC.nextEpisodes = self.episodes.after(startIndex: index + 1, limit: 4)
+            }
         }
     }
 }

@@ -37,6 +37,7 @@
 		EBF99F312ABEE2F500AB56AE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF99F232ABEE2ED00AB56AE /* Roboto-Bold.ttf */; };
 		EBF99F322ABEE2F500AB56AE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF99F242ABEE2ED00AB56AE /* Roboto-Medium.ttf */; };
 		EBF99F332ABEE2F500AB56AE /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF99F1F2ABEE2ED00AB56AE /* Roboto-Italic.ttf */; };
+		EBF99F352ABEEC3900AB56AE /* Array+getNextItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF99F342ABEEC3900AB56AE /* Array+getNextItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		EBF99F252ABEE2EE00AB56AE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		EBF99F262ABEE2EE00AB56AE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		EBF99F272ABEE2EE00AB56AE /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EBF99F342ABEEC3900AB56AE /* Array+getNextItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+getNextItems.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				EBC76C602ABEC7A50064F925 /* UIViewController+toast.swift */,
 				EBF99F132ABEDA2A00AB56AE /* UIImageView+load.swift */,
 				EBF99F192ABEE16A00AB56AE /* String+removeHTML.swift */,
+				EBF99F342ABEEC3900AB56AE /* Array+getNextItems.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				EBC76C5E2ABEC0670064F925 /* Episode.swift in Sources */,
 				EBC76C612ABEC7A50064F925 /* UIViewController+toast.swift in Sources */,
 				EBF99F142ABEDA2A00AB56AE /* UIImageView+load.swift in Sources */,
+				EBF99F352ABEEC3900AB56AE /* Array+getNextItems.swift in Sources */,
 				EBC76C482ABEBE6B0064F925 /* SceneDelegate.swift in Sources */,
 				EBF99F102ABED30D00AB56AE /* BigEpisodeTableViewCell.swift in Sources */,
 				EBF99F0A2ABECC2C00AB56AE /* DetailViewController.swift in Sources */,
