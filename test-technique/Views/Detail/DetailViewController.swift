@@ -10,12 +10,32 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var runtimeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
     
     var episode: Episode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.NameLabel.text = episode?.name
+        if let episode = self.episode {
+            self.imageView.load(string: episode.image.original)
+            self.nameLabel.text = episode.name
+            self.timeLabel.text = episode.airtime
+            self.dateLabel.text = episode.airdate
+            self.summaryLabel.text = episode.summary.removeHTML()
+        }
+    }
+
+    @IBAction func urlButtonHandle(_ sender: Any) {
+        if let path = self.episode?.url, let url = URL(string:path) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            self.showToast(message: "Impossible d'ouvrir l'URL")
+        }
     }
 }
