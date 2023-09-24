@@ -16,8 +16,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
-    @IBOutlet weak var nextEpisodesTableView: UITableView!
+     @IBOutlet weak var nextEpisodesTableView: UITableView!
     
+    @IBOutlet weak var nextEpisodesLabel: UILabel!
     @IBOutlet weak var nextEpisodesTableViewHeight: NSLayoutConstraint!
     var episode: Episode?
     var nextEpisodes: [Episode] = []
@@ -27,11 +28,20 @@ class DetailViewController: UIViewController {
         if let episode = self.episode {
             self.imageView.load(string: episode.image.original)
             self.nameLabel.text = episode.name
+            self.runtimeLabel.text = "\(episode.runtime) min"
             self.timeLabel.text = episode.airtime
             self.dateLabel.text = episode.airdate
             self.summaryLabel.text = episode.summary.removeHTML()
         }
-        
+
+        if self.nextEpisodes.count == 0 {
+            self.nextEpisodesLabel.text = "IL N'Y A PLUS D'ÉPISODES"
+        } else if self.nextEpisodes.count == 1 {
+            self.nextEpisodesLabel.text = "À SUIVRE (LE DERNIER ÉPISODE)"
+        } else {
+            self.nextEpisodesLabel.text = "À SUIVRE (LES \(self.nextEpisodes.count) PROCHAINS EP.)"
+        }
+
         self.nextEpisodesTableView.delegate = self
         self.nextEpisodesTableView.dataSource = self
         self.nextEpisodesTableView.separatorColor = .clear
