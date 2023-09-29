@@ -21,7 +21,8 @@ class ListViewController: UIViewController {
         self.episodesTableView.dataSource = self
 
         loaderView.isHidden = false
-        APIEpisode.list { response, error in
+        APIEpisode.list { [weak self] response, error in
+            guard let self = self else { return }
             if let episodes = response {
                 self.episodes = episodes
                 self.episodesTableView.reloadData()
