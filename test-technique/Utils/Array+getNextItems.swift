@@ -11,8 +11,7 @@ extension Array {
     func after(startIndex: Int, limit: Int) -> [Element] {
         var result: [Element] = []
         var currentIndex = startIndex
-        for i in 1...4 {
-            debugPrint("item \(i)")
+        for _ in 1...4 {
             if currentIndex < self.count {
                 result.append(self[currentIndex])
                 currentIndex += 1

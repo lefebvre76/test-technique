@@ -17,7 +17,8 @@ class EpisodeTableViewCell: UITableViewCell {
 
     func setEpisode(episode: Episode) {
         self.episodeImageView.image = nil
-        self.positionLabel.text = "SEASON \(episode.season) - EPISODE \(episode.number)"
+        
+        self.positionLabel.text = "\("season".localized().uppercased()) \(episode.season) - \("episode".localized().uppercased()) \(episode.number)"
         self.nameLabel.text = episode.name
         self.episodeImageView.load(string: episode.image.medium)
     }

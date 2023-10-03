@@ -27,7 +27,7 @@ class ListViewController: UIViewController {
                 self.episodes = episodes
                 self.episodesTableView.reloadData()
             } else {
-                self.showToast(message: "Erreur lors du chargement")
+                self.showToast(message: "error_loading".localizedCapitalized)
             }
             self.loaderView.isHidden = true
         }

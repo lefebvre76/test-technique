@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C66DE63BB143FECE6D021A7 /* Pods_test_technique.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7EFA74300A395EDCA400E4 /* Pods_test_technique.framework */; };
+		EB5B8D432ACBF0F400785FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EB5B8D422ACBF0F400785FAD /* Localizable.xcstrings */; };
+		EB5B8D452ACBF23B00785FAD /* UILabel+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B8D442ACBF23B00785FAD /* UILabel+Inspectable.swift */; };
+		EB5B8D472ACBF64F00785FAD /* Sting+i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B8D462ACBF64F00785FAD /* Sting+i18n.swift */; };
 		EBC76C462ABEBE6B0064F925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC76C452ABEBE6B0064F925 /* AppDelegate.swift */; };
 		EBC76C482ABEBE6B0064F925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC76C472ABEBE6B0064F925 /* SceneDelegate.swift */; };
 		EBC76C4A2ABEBE6B0064F925 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC76C492ABEBE6B0064F925 /* ListViewController.swift */; };
@@ -43,6 +46,9 @@
 /* Begin PBXFileReference section */
 		00C6D76BCED0D062E20661B7 /* Pods-test-technique.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-technique.release.xcconfig"; path = "Target Support Files/Pods-test-technique/Pods-test-technique.release.xcconfig"; sourceTree = "<group>"; };
 		DF7EFA74300A395EDCA400E4 /* Pods_test_technique.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_technique.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5B8D422ACBF0F400785FAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		EB5B8D442ACBF23B00785FAD /* UILabel+Inspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Inspectable.swift"; sourceTree = "<group>"; };
+		EB5B8D462ACBF64F00785FAD /* Sting+i18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sting+i18n.swift"; sourceTree = "<group>"; };
 		EBC646148B5635D3EDEC103B /* Pods-test-technique.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-technique.debug.xcconfig"; path = "Target Support Files/Pods-test-technique/Pods-test-technique.debug.xcconfig"; sourceTree = "<group>"; };
 		EBC76C422ABEBE6B0064F925 /* test-technique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-technique.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC76C452ABEBE6B0064F925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB5B8D412ACBF0C700785FAD /* i18n */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B8D422ACBF0F400785FAD /* Localizable.xcstrings */,
+			);
+			path = i18n;
+			sourceTree = "<group>";
+		};
 		EBC76C392ABEBE6B0064F925 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +142,7 @@
 		EBC76C442ABEBE6B0064F925 /* test-technique */ = {
 			isa = PBXGroup;
 			children = (
+				EB5B8D412ACBF0C700785FAD /* i18n */,
 				EBF99F1B2ABEE2DA00AB56AE /* fonts */,
 				EBF99F072ABECC1900AB56AE /* Views */,
 				EBC76C5F2ABEC7910064F925 /* Utils */,
@@ -167,6 +182,8 @@
 				EBF99F132ABEDA2A00AB56AE /* UIImageView+load.swift */,
 				EBF99F192ABEE16A00AB56AE /* String+removeHTML.swift */,
 				EBF99F342ABEEC3900AB56AE /* Array+getNextItems.swift */,
+				EB5B8D442ACBF23B00785FAD /* UILabel+Inspectable.swift */,
+				EB5B8D462ACBF64F00785FAD /* Sting+i18n.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -271,6 +288,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = EBC76C392ABEBE6B0064F925;
 			productRefGroup = EBC76C432ABEBE6B0064F925 /* Products */;
@@ -295,6 +313,7 @@
 				EBF99F292ABEE2F500AB56AE /* Roboto-LightItalic.ttf in Resources */,
 				EBF99F332ABEE2F500AB56AE /* Roboto-Italic.ttf in Resources */,
 				EBF99F302ABEE2F500AB56AE /* Roboto-Light.ttf in Resources */,
+				EB5B8D432ACBF0F400785FAD /* Localizable.xcstrings in Resources */,
 				EBF99F182ABEDE2200AB56AE /* BigEpisodeTableViewCell.xib in Resources */,
 				EBF99F122ABED70A00AB56AE /* EpisodeTableViewCell.xib in Resources */,
 				EBC76C4F2ABEBE6C0064F925 /* Assets.xcassets in Resources */,
@@ -360,6 +379,8 @@
 				EBF99F0E2ABED02000AB56AE /* EpisodeTableViewCell.swift in Sources */,
 				EBC76C462ABEBE6B0064F925 /* AppDelegate.swift in Sources */,
 				EBF99F1A2ABEE16A00AB56AE /* String+removeHTML.swift in Sources */,
+				EB5B8D472ACBF64F00785FAD /* Sting+i18n.swift in Sources */,
+				EB5B8D452ACBF23B00785FAD /* UILabel+Inspectable.swift in Sources */,
 				EBC76C5B2ABEBF220064F925 /* APIEpisode.swift in Sources */,
 				EBC76C5E2ABEC0670064F925 /* Episode.swift in Sources */,
 				EBC76C612ABEC7A50064F925 /* UIViewController+toast.swift in Sources */,

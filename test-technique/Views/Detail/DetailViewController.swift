@@ -35,11 +35,11 @@ class DetailViewController: UIViewController {
         }
 
         if self.nextEpisodes.count == 0 {
-            self.nextEpisodesLabel.text = "IL N'Y A PLUS D'ÉPISODES"
+            self.nextEpisodesLabel.text = "no_more_episode".localized().uppercased()
         } else if self.nextEpisodes.count == 1 {
-            self.nextEpisodesLabel.text = "À SUIVRE (LE DERNIER ÉPISODE)"
+            self.nextEpisodesLabel.text = "\("to_follow".localized().uppercased()) (\("last_episode".localized().uppercased()))"
         } else {
-            self.nextEpisodesLabel.text = "À SUIVRE (LES \(self.nextEpisodes.count) PROCHAINS EP.)"
+            self.nextEpisodesLabel.text = "\("to_follow".localized().uppercased()) (\("next_episodes".localized(arguments: self.nextEpisodes.count).uppercased()))"
         }
 
         self.nextEpisodesTableView.delegate = self
@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         if let path = self.episode?.url, let url = URL(string:path) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
-            self.showToast(message: "Impossible d'ouvrir l'URL")
+            self.showToast(message: "unabled_open_url".localized())
         }
     }
     
@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
             let activity = UIActivityViewController(activityItems: [url], applicationActivities: nil)
             present(activity, animated: true)
         } else {
-            self.showToast(message: "Impossible de partager l'URL")
+            self.showToast(message: "unabled_share_url".localized())
         }
     }
     
