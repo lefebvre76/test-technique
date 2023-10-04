@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
             self.nameLabel.text = episode.name
             self.runtimeLabel.text = "\(episode.runtime) min"
             self.timeLabel.text = episode.airtime
-            self.dateLabel.text = episode.airdate
+            self.dateLabel.text = episode.airdate.formatDate()
             self.summaryLabel.text = episode.summary.removeHTML()
         }
 
