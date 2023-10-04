@@ -34,17 +34,17 @@ class ListViewController: UIViewController {
         self.episodesTableView.separatorColor = .clear
         self.episodesTableView.register(UINib(nibName: "EpisodeTableViewCell",
                                               bundle: nil),
-                                forCellReuseIdentifier: "EpisodeTableViewCell")
+                                        forCellReuseIdentifier: TableViewCellIdentifiers.episodeTableViewCell)
         self.episodesTableView.register(UINib(nibName: "BigEpisodeTableViewCell",
                                               bundle: nil),
-                                forCellReuseIdentifier: "BigEpisodeTableViewCell")
+                                        forCellReuseIdentifier: TableViewCellIdentifiers.bigEpisodeTableViewCell)
     }
 }
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedEpisode = self.episodes[indexPath.row]
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.performSegue(withIdentifier: SegueIdentifiers.ListViewController.detailViewController, sender: self)
         self.selectedEpisode = nil
         self.episodesTableView.deselectRow(at: indexPath, animated: false)
     }
@@ -74,11 +74,11 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row%5 == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BigEpisodeTableViewCell", for: indexPath) as? BigEpisodeTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.bigEpisodeTableViewCell, for: indexPath) as? BigEpisodeTableViewCell else { return UITableViewCell() }
             cell.setEpisode(episode: self.episodes[indexPath.row])
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.episodeTableViewCell, for: indexPath) as? EpisodeTableViewCell else { return UITableViewCell() }
             cell.setEpisode(episode: self.episodes[indexPath.row])
             return cell
         }

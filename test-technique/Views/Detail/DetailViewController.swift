@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
         self.nextEpisodesTableView.separatorColor = .clear
         self.nextEpisodesTableView.register(UINib(nibName: "EpisodeTableViewCell",
                                               bundle: nil),
-                                forCellReuseIdentifier: "EpisodeTableViewCell")
+                                            forCellReuseIdentifier: TableViewCellIdentifiers.episodeTableViewCell)
         self.nextEpisodesTableViewHeight.constant = CGFloat(self.nextEpisodes.count * 110)
         self.nextEpisodesTableView.reloadData()
     }
@@ -88,7 +88,7 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.episodeTableViewCell, for: indexPath) as? EpisodeTableViewCell else { return UITableViewCell() }
         cell.setEpisode(episode: self.nextEpisodes[indexPath.row])
         return cell
     }

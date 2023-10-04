@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C66DE63BB143FECE6D021A7 /* Pods_test_technique.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7EFA74300A395EDCA400E4 /* Pods_test_technique.framework */; };
+		EB4F4D672ACD413E00E943E7 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4F4D662ACD413E00E943E7 /* SegueIdentifiers.swift */; };
+		EB4F4D692ACD421000E943E7 /* TableViewCellIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4F4D682ACD421000E943E7 /* TableViewCellIdentifiers.swift */; };
 		EB5B8D432ACBF0F400785FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EB5B8D422ACBF0F400785FAD /* Localizable.xcstrings */; };
 		EB5B8D452ACBF23B00785FAD /* UILabel+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B8D442ACBF23B00785FAD /* UILabel+Inspectable.swift */; };
 		EB5B8D472ACBF64F00785FAD /* Sting+i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B8D462ACBF64F00785FAD /* Sting+i18n.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		00C6D76BCED0D062E20661B7 /* Pods-test-technique.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-technique.release.xcconfig"; path = "Target Support Files/Pods-test-technique/Pods-test-technique.release.xcconfig"; sourceTree = "<group>"; };
 		DF7EFA74300A395EDCA400E4 /* Pods_test_technique.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_technique.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4F4D662ACD413E00E943E7 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
+		EB4F4D682ACD421000E943E7 /* TableViewCellIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellIdentifiers.swift; sourceTree = "<group>"; };
 		EB5B8D422ACBF0F400785FAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		EB5B8D442ACBF23B00785FAD /* UILabel+Inspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Inspectable.swift"; sourceTree = "<group>"; };
 		EB5B8D462ACBF64F00785FAD /* Sting+i18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sting+i18n.swift"; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB4F4D652ACD412F00E943E7 /* Identifiers */ = {
+			isa = PBXGroup;
+			children = (
+				EB4F4D662ACD413E00E943E7 /* SegueIdentifiers.swift */,
+				EB4F4D682ACD421000E943E7 /* TableViewCellIdentifiers.swift */,
+			);
+			path = Identifiers;
+			sourceTree = "<group>";
+		};
 		EB5B8D412ACBF0C700785FAD /* i18n */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 		EBC76C5F2ABEC7910064F925 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EB4F4D652ACD412F00E943E7 /* Identifiers */,
 				EBC76C602ABEC7A50064F925 /* UIViewController+toast.swift */,
 				EBF99F132ABEDA2A00AB56AE /* UIImageView+load.swift */,
 				EBF99F192ABEE16A00AB56AE /* String+removeHTML.swift */,
@@ -375,6 +389,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4F4D692ACD421000E943E7 /* TableViewCellIdentifiers.swift in Sources */,
+				EB4F4D672ACD413E00E943E7 /* SegueIdentifiers.swift in Sources */,
 				EBC76C4A2ABEBE6B0064F925 /* ListViewController.swift in Sources */,
 				EBF99F0E2ABED02000AB56AE /* EpisodeTableViewCell.swift in Sources */,
 				EBC76C462ABEBE6B0064F925 /* AppDelegate.swift in Sources */,
